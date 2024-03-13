@@ -12,11 +12,11 @@ from PIL import Image
 from io import BytesIO
 
 # die Pfade für die Engines
-maia = "/home/harald/Entwicklung/PycharmProjects/Engines/Lc0-0.27.0"
-stockfish = "/home/harald/Entwicklung/Python/Chessi/Engines/stockfish-ubuntu-x86-64-avx2"
+maia = "/home/harald/Entwicklung/Python/chessi/Engines/Lc0-0.27.0"
+stockfish = "/home/harald/Entwicklung/Python/chessi/Engines/stockfish-ubuntu-x86-64-avx2"
 
 # das engine-Objekt wird erstellt
-engine = chess.engine.SimpleEngine.popen_uci(maia)
+engine = chess.engine.SimpleEngine.popen_uci(stockfish)
 
 # Zeit pro Zug in Sekunden und Rechentiefe wird festgelegt
 zeit = 5.0
@@ -173,7 +173,7 @@ def get_piece_image(piece):
         "K": "kingW.png"
     }
     if piece.symbol() in piece_names:
-        return Image.open("/home/harald/Entwicklung/Python/Chessi/Figuren/" + piece_names[piece.symbol()])
+        return Image.open("/home/harald/Entwicklung/Python/chessi/Figuren/" + piece_names[piece.symbol()])
     else:
         return None
 
